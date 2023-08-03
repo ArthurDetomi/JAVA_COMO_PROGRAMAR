@@ -16,7 +16,7 @@ public class Account {
     public void debit(double amount) {
         double posDebit = this.balance - amount;
         if (posDebit >= 0.0) {
-            this.balance -= amount;
+            this.balance = posDebit;
         } else {
             System.out.println("Debit amount exceeded account balance");
         }
