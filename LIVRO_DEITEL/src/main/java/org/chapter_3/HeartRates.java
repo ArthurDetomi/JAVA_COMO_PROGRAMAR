@@ -10,20 +10,24 @@ public class HeartRates {
     private String sobrenome;
     private Date dateOfBirth;
 
+    public HeartRates() {
+
+    }
+
     public HeartRates(String nome, String sobrenome, Date date) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.dateOfBirth = date;
     }
-
+    
     @Override
     public String toString() {
         return "HeartRates{\n" +
                 "nome='" + nome + '\'' + "\n" +
                 ", sobrenome='" + sobrenome + '\'' + "\n" +
-                ", dateOfBirth=" + dateOfBirth + "\n" +
+                ", dateOfBirth=" + dateOfBirth.toString() + "\n" +
                 ", maxHeartRate=" + calculateMaxHeartRate() + "\n" +
-                ", TargetHeartRate=" + calculateTargetHeartRate() + "\n" +
+                ", TargetHeartRate=" + calculateTargetHeartRateInterval() + "\n" +
                 '}';
     }
 
@@ -46,8 +50,11 @@ public class HeartRates {
         return MAX_HEART_RATE_CONSTANT - calculateAge();
     }
 
-    public double calculateTargetHeartRate() {
-        return HEART_RATE_TARGET - (calculateMaxHeartRate() * 0.85);
+    public String calculateTargetHeartRateInterval() {
+        int maxRate = calculateMaxHeartRate();
+        double minimumRate = maxRate * 0.50;
+        double maximumRate = maxRate * 0.85;
+        return String.format(" %.2f - %.2f", minimumRate, maximumRate);
     }
 
     public String getNome() {

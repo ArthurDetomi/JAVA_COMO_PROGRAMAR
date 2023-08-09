@@ -6,6 +6,11 @@ public class Date {
     private int month;
     private int year;
 
+    @Override
+    public String toString() {
+        return String.format("%02d/%02d/%d", day, month, year);
+    }
+
     public void displayDate() {
         System.out.println(String.format("%d/%d/%d\n", day, month, year));
     }

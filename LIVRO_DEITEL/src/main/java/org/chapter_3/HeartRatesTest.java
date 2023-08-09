@@ -3,7 +3,7 @@ package org.chapter_3;
 import java.util.Scanner;
 
 public class HeartRatesTest {
-
+    // Exercise 3.16
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
