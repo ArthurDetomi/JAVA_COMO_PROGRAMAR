@@ -1,7 +1,7 @@
 package org.chapter_8;
 
 public class SavingAccount {
-    static int annualInterestRate;
+    public static int annualInterestRate;
     private double savingBalance;
 
     public SavingAccount(double savingBalance) {
